@@ -17,6 +17,16 @@ namespace MakeMyTrip.TestCase
             string expected = "Hey Amit";
             Assert.AreEqual(expected, login.UserNameValidation());
         }
+
+        [Test, Order(2)]
+        public void SearchFlight()
+        {
+
+            SearchFlight search = new SearchFlight(driver);
+            search.Search();
+            string expected = "Flights from Mumbai to Bengaluru, and back";
+            Assert.AreEqual(expected, search.SearchFlightValidation());
+        }
     }
 }
 
