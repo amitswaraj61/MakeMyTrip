@@ -1,5 +1,6 @@
 ﻿using MakeMyTrip.Page;
 using NUnit.Framework;
+using System;
 
 namespace MakeMyTrip.TestCase
 {
@@ -8,7 +9,14 @@ namespace MakeMyTrip.TestCase
     {
         Credentials credentails = new Credentials();
 
-        [Test, Order(1)]
+        [Test, Order(0)]
+        public void CheckInternet()
+        {
+            CheckInternetConnection connection = new CheckInternetConnection();
+            Console.WriteLine(connection.IsConnectedToInternet());
+        }
+
+         [Test, Order(1)]
         public void ValidLogin()
         {
             Login login = new Login(driver);

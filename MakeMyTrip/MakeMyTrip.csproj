@@ -130,6 +130,7 @@
     <Compile Include="Base.cs" />
     <Compile Include="BrowserFactory\BrowserFactoryException.cs" />
     <Compile Include="BrowserFactory\BrowserFactoryMain.cs" />
+    <Compile Include="CheckInternetConnection.cs" />
     <Compile Include="Credentials.cs" />
     <Compile Include="Email\SendEmailMain.cs" />
     <Compile Include="Page\Login.cs" />
