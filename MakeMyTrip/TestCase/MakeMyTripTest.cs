@@ -27,6 +27,15 @@ namespace MakeMyTrip.TestCase
             string expected = "Flights from Mumbai to Bengaluru, and back";
             Assert.AreEqual(expected, search.SearchFlightValidation());
         }
+        [Test, Order(3)]
+        public void PrintFlight()
+        {
+
+            PrintTotalFlight print = new PrintTotalFlight(driver);
+            print.PrintFlight();
+            string expected = "₹ 7,013";
+            Assert.AreEqual(expected, print.Validation());
+        }
     }
 }
 
