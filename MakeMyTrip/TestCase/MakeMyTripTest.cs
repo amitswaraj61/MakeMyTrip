@@ -36,6 +36,12 @@ namespace MakeMyTrip.TestCase
             string expected = "₹ 7,013";
             Assert.AreEqual(expected, print.Validation());
         }
+        [Test, Order(4)]
+        public void Logout()
+        {
+            Logout logout = new Logout(driver);
+            logout.LogoutToMakeMyTrip();
+        }
     }
 }
 
