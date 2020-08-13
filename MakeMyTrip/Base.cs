@@ -1,5 +1,4 @@
-﻿
-using AventStack.ExtentReports;
+﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.MarkupUtils;
 using MakeMyTrip.BrowserFactory;
 using MakeMyTrip.Email;
@@ -55,6 +54,16 @@ namespace MakeMyTrip
         public void StartingLog()
         {
             log.Info(TestContext.CurrentContext.Test.Name + "Started");
+            //checking the internet connection 
+            try
+            {
+                CheckInternetConnection connection = new CheckInternetConnection();
+                Console.WriteLine("Internet connection ---->" + connection.IsConnectedToInternet());
+            }
+            catch(BrowserFactoryException exception)
+            {
+                throw new BrowserFactoryException("Internet is not available", BrowserFactoryException.ExceptionType.INTERNET_NOT_AVAILABLE);
+            }
         }
 
         [TearDown]

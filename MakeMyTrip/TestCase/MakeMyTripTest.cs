@@ -1,6 +1,5 @@
 ﻿using MakeMyTrip.Page;
 using NUnit.Framework;
-using System;
 
 namespace MakeMyTrip.TestCase
 {
@@ -9,14 +8,7 @@ namespace MakeMyTrip.TestCase
     {
         Credentials credentails = new Credentials();
 
-        [Test, Order(0)]
-        public void CheckInternet()
-        {
-            CheckInternetConnection connection = new CheckInternetConnection();
-            Console.WriteLine(connection.IsConnectedToInternet());
-        }
-
-         [Test, Order(1)]
+        [Test, Order(1)]
         public void ValidLogin()
         {
             Login login = new Login(driver);
@@ -29,7 +21,6 @@ namespace MakeMyTrip.TestCase
         [Test, Order(2)]
         public void SearchFlight()
         {
-
             SearchFlight search = new SearchFlight(driver);
             search.Search();
             string expected = "Flights from Mumbai to Bengaluru, and back";
@@ -38,7 +29,6 @@ namespace MakeMyTrip.TestCase
         [Test, Order(3)]
         public void PrintFlight()
         {
-
             PrintTotalFlight print = new PrintTotalFlight(driver);
             print.PrintFlight();
             string expected = "₹ 7,013";

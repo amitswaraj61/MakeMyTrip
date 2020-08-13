@@ -1,0 +1,24 @@
+﻿2020-08-10 18:16:30,151 INFO [ParallelWorker#3] MakeMyTrip.Base.StartingLog - ValidLoginStarted
+2020-08-10 18:17:01,836 INFO [ParallelWorker#3] MakeMyTrip.Base.ExtentFlush - ValidLoginPassed
+2020-08-10 18:17:01,839 INFO [ParallelWorker#3] MakeMyTrip.Base.ExtentFlush - ValidLoginTest Completed
+2020-08-10 18:17:08,171 INFO [ParallelWorker#3] MakeMyTrip.Base.StartingLog - SearchFlightStarted
+2020-08-10 18:18:08,840 ERROR [ParallelWorker#3] MakeMyTrip.Base.ExtentFlush - SearchFlightFailed
+2020-08-10 18:18:09,555 ERROR [ParallelWorker#3] MakeMyTrip.Base.ExtentFlush - Test Failed
+2020-08-10 18:18:32,812 INFO [ParallelWorker#3] MakeMyTrip.Base.StartingLog - PrintFlightStarted
+2020-08-10 18:19:15,905 ERROR [ParallelWorker#3] MakeMyTrip.Base.ExtentFlush - PrintFlightFailed
+2020-08-10 18:19:16,396 ERROR [ParallelWorker#3] MakeMyTrip.Base.ExtentFlush - Test Failed
+2020-08-10 18:19:22,616 INFO [ParallelWorker#3] MakeMyTrip.Base.StartingLog - LogoutStarted
+2020-08-10 18:19:32,053 INFO [ParallelWorker#3] MakeMyTrip.Base.ExtentFlush - LogoutPassed
+2020-08-10 18:19:32,054 INFO [ParallelWorker#3] MakeMyTrip.Base.ExtentFlush - LogoutTest Completed
+2020-08-10 18:21:37,755 INFO [NonParallelWorker] MakeMyTrip.Base.StartingLog - ValidLoginStarted
+2020-08-10 18:22:12,658 ERROR [NonParallelWorker] MakeMyTrip.Base.ExtentFlush - ValidLoginFailed
+2020-08-10 18:22:13,419 ERROR [NonParallelWorker] MakeMyTrip.Base.ExtentFlush - Test Failed
+2020-08-10 18:22:24,151 INFO [NonParallelWorker] MakeMyTrip.Base.StartingLog - SearchFlightStarted
+2020-08-10 18:22:30,228 ERROR [NonParallelWorker] MakeMyTrip.Base.ExtentFlush - SearchFlightFailed
+2020-08-10 18:22:34,252 INFO [NonParallelWorker] MakeMyTrip.Base.StartingLog - PrintFlightStarted
+2020-08-10 18:22:38,270 ERROR [NonParallelWorker] MakeMyTrip.Base.ExtentFlush - PrintFlightFailed
+2020-08-10 18:22:42,273 INFO [NonParallelWorker] MakeMyTrip.Base.StartingLog - LogoutStarted
+2020-08-10 18:22:48,283 ERROR [NonParallelWorker] MakeMyTrip.Base.ExtentFlush - LogoutFailed
+2020-08-10 21:33:51,701 INFO [NonParallelWorker] MakeMyTrip.Base.StartingLog - CheckInternetStarted
+2020-08-10 21:33:55,949 INFO [NonParallelWorker] MakeMyTrip.Base.ExtentFlush - CheckInternetPassed
+2020-08-10 21:33:55,951 INFO [NonParallelWorker] MakeMyTrip.Base.ExtentFlush - CheckInternetTest Completed

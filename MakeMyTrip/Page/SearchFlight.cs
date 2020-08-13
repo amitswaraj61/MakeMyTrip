@@ -56,7 +56,6 @@ namespace MakeMyTrip.Page
 
         public void Search()
         {
-            Thread.Sleep(2000);
             roundTrip.Click();
             Thread.Sleep(3000);
             fromCity.SendKeys(ConfigurationManager.AppSettings["fromCity"]);
