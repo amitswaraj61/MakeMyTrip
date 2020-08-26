@@ -1,4 +1,10 @@
-﻿using AventStack.ExtentReports;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Base.cs" company="BridgeLabz">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+//-----------------------------------------------------------------------
+
+using AventStack.ExtentReports;
 using AventStack.ExtentReports.MarkupUtils;
 using MakeMyTrip.BrowserFactory;
 using MakeMyTrip.Email;
@@ -11,61 +17,76 @@ using System.Threading;
 
 namespace MakeMyTrip
 {
+    // <summary>
+    /// Initialization of Base classes
+    /// </summary>                  
     public class Base
     {
+        /// <summary>
+        /// Initialization of web driver
+        /// </summary>
         public IWebDriver driver;
 
-        //create Instance of Browser Factory
+        /// <summary>
+        /// create object of BrowserFactoryMain
+        /// </summary>
         BrowserFactoryMain browser = new BrowserFactoryMain();
 
-        //create Instance of Extent Report
+        /// <summary>
+        /// create instance of Extent report
+        /// </summary>
         public static ExtentReports extent = ReportExtent.GetExtentReport();
         public static ExtentTest test;
 
-        //craete instance of Log4net
+        /// <summary>
+        /// create instance of Log4net
+        /// </summary>
         public static readonly log4net.ILog log =
         log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
-
+         
+        /// <summary>
+        /// create one time setup
+        /// </summary>
         [OneTimeSetUp]
+        [Obsolete]
         public void Initilize()
         {
-
-            driver = browser.InitBrowser("chrome"); //Initialize chrome driver
-
-            //Using implicitly wait 
+            driver = browser.InitBrowser("chrome"); 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-
-            //Maximizing the window
             driver.Manage().Window.Maximize();
-
-            //Enter the url
             driver.Url = ConfigurationManager.AppSettings["URL"];
         }
+        /// <summary>
+        /// create One time tear down
+        /// </summary>
         [OneTimeTearDown]
         public void Close()
         {
             Thread.Sleep(2000);
-
             driver.Quit();
         }
 
+        /// <summary>
+        /// create setup and check internet is connected or not
+        /// </summary>
         [SetUp]
         public void StartingLog()
         {
             log.Info(TestContext.CurrentContext.Test.Name + "Started");
-            //checking the internet connection 
             try
             {
                 CheckInternetConnection connection = new CheckInternetConnection();
                 Console.WriteLine("Internet connection ---->" + connection.IsConnectedToInternet());
             }
-            catch(BrowserFactoryException exception)
+            catch(BrowserFactoryException)
             {
                 throw new BrowserFactoryException("Internet is not available", BrowserFactoryException.ExceptionType.INTERNET_NOT_AVAILABLE);
             }
         }
 
+        /// <summary>
+        /// Take screenshot,send mail and generate extent report
+        /// </summary>
         [TearDown]
         public void ExtentFlush()
         {
@@ -91,7 +112,6 @@ namespace MakeMyTrip
                     test.Log(Status.Pass, "Test pass");
                     log.Info(TestContext.CurrentContext.Test.Name + "Test Completed");
                 }
-             // driver.Navigate().Refresh(); // every test must refresh the webpage ..use in negative test
                 extent.Flush();
             }
             catch (Exception e)

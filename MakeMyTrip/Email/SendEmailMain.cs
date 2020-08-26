@@ -1,13 +1,31 @@
-﻿using MakeMyTrip.BrowserFactory;
+﻿//-----------------------------------------------------------------------
+// <copyright file="SendEmailMain.cs" company="BridgeLabz">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+//-----------------------------------------------------------------------
+
+using MakeMyTrip.BrowserFactory;
 using System;
 using System.Net;
 using System.Net.Mail;
 
 namespace MakeMyTrip.Email
 {
+    /// <summary>
+    /// create SendEmailMain class
+    /// </summary>
     public class SendEmailMain
     {
+        /// <summary>
+        /// craete Credentials object
+        /// </summary>
         public static Credentials credentials = new Credentials();
+
+        /// <summary>
+        /// create SendEmail method
+        /// </summary>
+        /// <param name="Subject"></param>
+        /// <param name="contentBody"></param>
         public static void SendEmail(String Subject, String contentBody)
         {
             try
@@ -29,7 +47,7 @@ namespace MakeMyTrip.Email
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
             }
-            catch (BrowserFactoryException exception)
+            catch (BrowserFactoryException)
             {
                 throw new BrowserFactoryException("Mail cant be send", BrowserFactoryException.ExceptionType.MAIL_NOT_SEND);
             }
